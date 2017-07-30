@@ -29,4 +29,10 @@ describe('AppComponent', () => {
     expect(app.letterCombos).toBeDefined();
   }));
 
+  it('should append user input to itself in a preformatted text field', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.letterCombos('145')).toEqual('145145');
+  }));
+
 });
