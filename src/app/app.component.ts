@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  value = '';
+  onEnter(value: string) { this.value = value; }
   
-
-  letterCombos = function(){
-
-
+  letterCombos = function(input:string){
+    return input + input;
   };
 
 }
