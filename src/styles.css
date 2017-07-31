@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html {
-    overflow-y: scroll;
-    overflow-x: hidden;
+   
 }
 
 main {
@@ -69,4 +68,14 @@ footer {
     line-height:50px;
     font-size:20px;
     color: white;
+}
+
+.output:empty { 
+  border: none;
+}
+
+.output {
+    height: auto;
+    word-wrap: break-word;
+    border: 1px solid;
 }
