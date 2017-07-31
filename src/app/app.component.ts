@@ -5,11 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'app';
 
   value = '';
   onEnter(value: string) { this.value = value; }
+
   
   letterCombos = function(input:string){
 
@@ -26,7 +28,24 @@ export class AppComponent {
      9: ['w', 'x', 'y', 'z'],
    };
 
-    return dict[input];
+   if(input.length === 0) {
+     return [];
+   } else if(input.length === 1) {
+     return dict[input];
+   } else {
+    var front = dict[input.slice(0, 1)];
+    var back = this.letterCombos(input.slice(1)); // jumps to second-to-last number in string
+    var result:any = [];
+    
+    //concatenates combinations of two digit string, then three, then four, then up to n
+    front.forEach( (f:any) => {
+      back.forEach( (b:any) => {
+        result.push(f + b);
+      });
+    });
+
+    return result;
   };
 
+ }
 }
