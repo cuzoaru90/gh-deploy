@@ -3,11 +3,10 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 
@@ -29,10 +28,12 @@ describe('AppComponent', () => {
     expect(app.letterCombos).toBeDefined();
   }));
 
-  it('should append user input to itself in a preformatted text field', async(() => {
+  it('should map single digit strings to array of letters', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.letterCombos('145')).toEqual('145145');
+    expect(app.letterCombos('1')).toEqual(['1']);
+    expect(app.letterCombos('3')).toEqual( ['d', 'e', 'f'] );
+    expect(app.letterCombos('7')).toEqual( ['p', 'q', 'r', 's'] );
   }));
 
 });
